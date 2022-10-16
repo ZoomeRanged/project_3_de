@@ -65,7 +65,7 @@ df_filtered = df[(df['created_at'] >= '2018-02-01') &(df['created_at'] < '2018-1
 #create engine
 engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{database}')
 
-# insert to postgres
+# insert to postgresql
 
 df_filtered.to_sql(table_name, engine, if_exists='append', index=False)
 print(f'total inserted rows: {len(df_filtered)}')
